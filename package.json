@@ -1,0 +1,16 @@
+{
+  "name": "inject-repro",
+  "version": "1.0.0",
+  "description": "",
+  "main": "inject.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rm -rf out; ./node_modules/.bin/esbuild  \"greet.jsx\" \"folder/[name].jsx\" --outdir=out --splitting --format=esm --entry-names=[dir]/[name]-[hash] --inject:inject.js  --bundle --define:\"process.env.NODE_ENV=\"production\"\" "
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "esbuild": "^0.11.1",
+    "react": "^17.0.2"
+  }
+}
